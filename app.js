@@ -13,10 +13,10 @@ var gamePlay = ["","","","","","","","",""];
 //create functions to display various messages (player turn, win, draw)
 
 var playerTurnMessage = function() {
-    `It's ${player --}'s turn`;
+    `It's Player ${currentPlayer}'s turn`;
 }
 var winningMessage = function() {
-    `Player ${player --} has won!`;
+    `Player ${winner} has won!`;
 }
 
 var drawMessage = function() {
@@ -59,6 +59,165 @@ var handlePlayerChange = function() {
         return currentPlayer = 'O';
     } else {
         return currentPlayer = 'X';
+    }
+}
+
+var determineWinner = function() {
+var winner;
+    if (currentPlayer === 'X') {
+        if (boxes[0].textContent === 'X' &&
+            boxes[1].textContent === 'X' &&
+            boxes[2].textContent === 'X') {
+            winner = 'X';
+            console.log('Player X wins!!');
+            boxes[0].classList.add('show-winner') 
+            boxes[1].classList.add('show-winner') 
+            boxes[2].classList.add('show-winner');
+            winningMessage();
+        } else if (boxes[3].textContent === 'X' &&
+            boxes[4].textContent === 'X' &&
+            boxes[5].textContent === 'X') {
+            winner = 'X';
+            console.log('Player X wins!!');
+            boxes[3].classList.add('show-winner') 
+            boxes[4].classList.add('show-winner') 
+            boxes[5].classList.add('show-winner');
+            winningMessage();
+        } else if (boxes[6].textContent === 'X' &&
+            boxes[7].textContent === 'X' &&
+            boxes[8].textContent === 'X') {
+            winner = 'X';
+            console.log('Player X wins!!');
+            boxes[6].classList.add('show-winner') 
+            boxes[7].classList.add('show-winner') 
+            boxes[8].classList.add('show-winner');
+            winningMessage();
+        } else if (boxes[0].textContent === 'X' &&
+            boxes[3].textContent === 'X' &&
+            boxes[6].textContent === 'X') {
+            winner = 'X';
+            console.log('Player X wins!!');
+            boxes[0].classList.add('show-winner') 
+            boxes[3].classList.add('show-winner') 
+            boxes[6].classList.add('show-winner');
+            winningMessage();
+        } else if (boxes[1].textContent === 'X' &&
+            boxes[4].textContent === 'X' &&
+            boxes[7].textContent === 'X') {
+            winner = 'X';
+            console.log('Player X wins!!');
+            boxes[1].classList.add('show-winner') 
+            boxes[4].classList.add('show-winner') 
+            boxes[7].classList.add('show-winner');
+            winningMessage();
+        } else if (boxes[2].textContent === 'X' &&
+            boxes[5].textContent === 'X' &&
+            boxes[8].textContent === 'X') {
+            winner = 'X';
+            console.log('Player X wins!!');
+            boxes[2].classList.add('show-winner') 
+            boxes[5].classList.add('show-winner') 
+            boxes[8].classList.add('show-winner');
+            winningMessage();
+        } else if (boxes[0].textContent === 'X' &&
+            boxes[4].textContent === 'X' &&
+            boxes[8].textContent === 'X') {
+            winner = 'X';
+            console.log('Player X wins!!');
+            boxes[0].classList.add('show-winner') 
+            boxes[4].classList.add('show-winner') 
+            boxes[8].classList.add('show-winner');
+            winningMessage();
+        } else if (boxes[2].textContent === 'X' &&
+            boxes[4].textContent === 'X' &&
+            boxes[6].textContent === 'X') {
+            winner = 'X';
+            console.log('Player X wins!!');
+            boxes[2].classList.add('show-winner') 
+            boxes[4].classList.add('show-winner') 
+            boxes[6].classList.add('show-winner');
+            winningMessage();
+        } else {
+            drawMessage();
+        }
+    } else {
+        if (currentPlayer === 'O') {
+            if (boxes[0].textContent === 'O' &&
+                boxes[1].textContent === 'O' &&
+                boxes[2].textContent === 'O') {
+                winner = 'O';
+                console.log('Player O wins!!');
+                boxes[0].classList.add('show-winner') 
+                boxes[1].classList.add('show-winner') 
+                boxes[2].classList.add('show-winner');
+                winningMessage();
+            } else if (boxes[3].textContent === 'O' &&
+                boxes[4].textContent === 'O' &&
+                boxes[5].textContent === 'O') {
+                winner = 'O';
+                console.log('Player O wins!!');
+                boxes[3].classList.add('show-winner') 
+                boxes[4].classList.add('show-winner') 
+                boxes[5].classList.add('show-winner');
+                winningMessage();
+            } else if (boxes[6].textContent === 'O' &&
+                boxes[7].textContent === 'O' &&
+                boxes[8].textContent === 'O') {
+                winner = 'O';
+                console.log('Player O wins!!');
+                boxes[6].classList.add('show-winner') 
+                boxes[7].classList.add('show-winner') 
+                boxes[8].classList.add('show-winner');
+                winningMessage();
+            } else if (boxes[0].textContent === 'O' &&
+                boxes[3].textContent === 'O' &&
+                boxes[6].textContent === 'O') {
+                winner = 'O';
+                console.log('Player O wins!!');
+                boxes[0].classList.add('show-winner') 
+                boxes[3].classList.add('show-winner') 
+                boxes[6].classList.add('show-winner');
+                winningMessage();
+            } else if (boxes[1].textContent === 'O' &&
+                boxes[4].textContent === 'O' &&
+                boxes[7].textContent === 'O') {
+                winner = 'O';
+                console.log('Player O wins!!');
+                boxes[1].classList.add('show-winner') 
+                boxes[4].classList.add('show-winner') 
+                boxes[7].classList.add('show-winner');
+                winningMessage();
+            } else if (boxes[2].textContent === 'O' &&
+                boxes[5].textContent === 'O' &&
+                boxes[8].textContent === 'O') {
+                winner = 'O';
+                console.log('Player O wins!!');
+                boxes[2].classList.add('show-winner') 
+                boxes[5].classList.add('show-winner') 
+                boxes[8].classList.add('show-winner');
+                winningMessage();
+            } else if (boxes[0].textContent === 'O' &&
+                boxes[4].textContent === 'O' &&
+                boxes[8].textContent === 'O') {
+                winner = 'O';
+                console.log('Player O wins!!');
+                boxes[0].classList.add('show-winner') 
+                boxes[4].classList.add('show-winner') 
+                boxes[8].classList.add('show-winner');
+                winningMessage();
+            } else if (boxes[2].textContent === 'O' &&
+                boxes[4].textContent === 'O' &&
+                boxes[6].textContent === 'O') {
+                winner = 'O';
+                console.log('Player O wins!!');
+                boxes[2].classList.add('show-winner') 
+                boxes[4].classList.add('show-winner') 
+                boxes[6].classList.add('show-winner');
+                winningMessage();
+            } else {
+                drawMessage();
+            }
+        }
     }
 }
 
