@@ -46,7 +46,7 @@ var handleBoxClick = function(event) {
  //   var clickedBoxIndex = clickedBox.dataset.index;
     if (clickedBox.textContent === "") { // handleBoxCheck -check if move is legal // pull the data-index, then check if the textContent of the box is blank
         clickedBox.textContent = handlePlayerChange(); // assign a variable that will contain either X or O, player change for next click
-        // clickedBox.style.backgroundColor = 'red';
+        // clickedBox.style.backgroundColor = 'white';
         console.log('switching works');
         determineWinner();
     }
@@ -253,6 +253,7 @@ var determineWinner = function() {
 
 var winningMessage = function() {
     outcomeMessage.textContent =`Player ${winner} has won!`;
+    turnMessage.textContent = '';
     console.log('winning message works');
     setTimeout(resetGame, 3000);
 }
@@ -272,7 +273,7 @@ var resetGame = function() {
     }
     currentPlayer = '';
     winner = '';
-    turnMessage.textContent = '';
+    turnMessage.textContent = 'Ready Player X';
     outcomeMessage.textContent = '';
     console.log('reset works!');
 }
