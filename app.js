@@ -64,6 +64,7 @@ var handlePlayerChange = function() {
     }
 }
 
+// if winning combinations[i] (x8) === 'X' {winner = "X", etc...}
 var determineWinner = function() {
     if (currentPlayer === 'X') {
         if (boxes[0].textContent === 'X' &&
@@ -253,6 +254,7 @@ var determineWinner = function() {
 var winningMessage = function() {
     outcomeMessage.textContent =`Player ${winner} has won!`;
     console.log('winning message works');
+    setTimeout(resetGame, 3000);
 }
 
 var drawMessage = function() {

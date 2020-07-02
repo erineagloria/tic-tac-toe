@@ -11,10 +11,13 @@
     <header>
         <h1><span id="title-tic">TIC </span><span id="title-tac"> TAC</span> <span id="title-toe">TOE</span></h1>
     </header>
-    <nav>
-        <button class="reset-btn">Play Again</button>
-    </nav>
     <main>
+        <section>
+            <div class="messages">
+                <h2 class="player-turn-message"> </h2>
+                <h2 class="win-draw-message"> </h2>
+            </div>
+        </section>
         <div class="game">
             <div class="grid">
                 <div data-index="0" class="box top-left"></div>
@@ -28,12 +31,6 @@
                 <div data-index="8" class="box bottom-right"></div>
             </div>
         </div>
-        <section>
-            <div class="messages">
-                <h2 class="player-turn-message"> </h2>
-                <h2 class="win-draw-message"> </h2>
-            </div>
-        </section>
     </main>
     <!-- <aside>
         <div class="game-tracker">
@@ -43,7 +40,10 @@
             <p>Games Played:</p><p class="games-played"> </p>
         </div>
     </aside> -->
-    <footer>&copy; 2020, Erinea Gloria</footer>
+    <footer>
+        <button class="reset-btn">Play Again</button>
+        <p>&copy; 2020, Erinea Gloria. All rights reserved.</p>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>

@@ -23,13 +23,13 @@ h1 {
     color: #FF0099;
 }
 .game {
-    position: absolute;
+    position: relative;
     top: 60%;
     left: 50%;
     width: 600px;
     height: 600px;
     margin-left: -300px;
-    margin-top: -370px;
+    /* margin-top: -370px; */
     /* box-sizing: inherit; */
 }
 .grid {
@@ -38,6 +38,7 @@ h1 {
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
     padding: 5px 5px; 
     /* box-sizing: inherit; */
@@ -60,4 +61,10 @@ h1 {
 }
 .show-winner {
     background-color: #CC00FF; 
+}
+footer {
+    font-family: Helvetica, sans-serif;
+    text-align: left;
+    margin-top: 50px;
+    padding-left: 20px;
 }
