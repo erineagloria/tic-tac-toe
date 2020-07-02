@@ -8,7 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker" rel="stylesheet">
 </head>
 <body>
-    <h1><span id="title-tic">TIC </span><span id="title-tac">TAC </span> <span id="title-toe"> TOE</span></h1>
+    <header>
+        <h1><span id="title-tic">TIC </span><span id="title-tac"> TAC</span> <span id="title-toe">TOE</span></h1>
+    </header>
+    <nav>
+        <button class="reset-btn">Play Again</button>
+    </nav>
     <main>
         <div class="game">
             <div class="grid">
@@ -24,18 +29,20 @@
             </div>
         </div>
         <section>
-            <div class="game-tracker">
-                <p class="player-turn-message"> </p>
-                <p class="win-draw-message"> </p>
-                <p>Player 1: X</p><p class="player-one-score"> </p>
-                <p>Draw:</p><p class="draw-score"> </p>
-                <p>Player 2: O</p><p class="player-one-score"> </p>
-                <p>Games Played:</p><p class="games-played"> </p>
-                <button class="reset-btn">Play Again</button>
+            <div class="messages">
+                <h2 class="player-turn-message"> </h2>
+                <h2 class="win-draw-message"> </h2>
             </div>
         </section>
     </main>
-
+    <!-- <aside>
+        <div class="game-tracker">
+            <p>Player 1: X</p><p class="player-one-score"> </p>
+            <p>Draw:</p><p class="draw-score"> </p>
+            <p>Player 2: O</p><p class="player-one-score"> </p>
+            <p>Games Played:</p><p class="games-played"> </p>
+        </div>
+    </aside> -->
     <footer>&copy; 2020, Erinea Gloria</footer>
     <script src="app.js"></script>
 </body>
