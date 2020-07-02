@@ -25,7 +25,7 @@ var gamePlay = ["","","","","","","","",""];
 // create variables that refer back to the originl doc
 
 var boxes = document.querySelectorAll('.box');
-var restartBtn = document.querySelector('.restart-btn');
+var resetBtn = document.querySelector('.reset-btn');
 var turnMessage = document.querySelector('.player-turn-message');
 var outcomeMessage = document.querySelector('.win-draw-message');
 
@@ -52,7 +52,7 @@ var handleBoxClick = function(event) {
     }
 }
 
-for (var i = 0; i < boxes.length; i++) {
+for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener('click', handleBoxClick);
 } 
 
@@ -138,9 +138,19 @@ var determineWinner = function() {
             boxes[4].classList.add('show-winner') 
             boxes[6].classList.add('show-winner');
             winningMessage();
-        } else {
-            playerTurnMessage();
-            console.log('game continues for another turn')
+        } else if (boxes[0].textContent !== '' &&
+            boxes[1].textContent !== '' &&
+            boxes[2].textContent !== '' &&
+            boxes[3].textContent !== '' &&
+            boxes[4].textContent !== '' &&
+            boxes[5].textContent !== '' &&
+            boxes[6].textContent !== '' &&
+            boxes[7].textContent !== '' &&
+            boxes[8].textContent !== '' ) {
+            drawMessage();
+       } else {
+            setTimeout(playerTurnMessage, 1000);
+            console.log('game continues')
         }
     } else {
         if (currentPlayer === 'O') {
@@ -217,13 +227,28 @@ var determineWinner = function() {
                 boxes[6].classList.add('show-winner');
                 winningMessage();
                 console.log('determine winner works')
+            } else if (boxes[0].textContent !== '' &&
+                boxes[1].textContent !== '' &&
+                boxes[2].textContent !== '' &&
+                boxes[3].textContent !== '' &&
+                boxes[4].textContent !== '' &&
+                boxes[5].textContent !== '' &&
+                boxes[6].textContent !== '' &&
+                boxes[7].textContent !== '' &&
+                boxes[8].textContent !== '' ) {
+                drawMessage();
             } else {
-                playerTurnMessage();
-                console.log('game continues for another turn')
+                setTimeout(playerTurnMessage, 1000);
+                console.log('game continues')
             }
         }
     }
 }
+
+// attempt below to shorten the draw code
+// for (let i = 0; i < boxes.length; i++) {
+//     boxes[i].textContent !== '';
+// }
 
 var winningMessage = function() {
     outcomeMessage.textContent =`Player ${winner} has won!`;
@@ -231,14 +256,22 @@ var winningMessage = function() {
 }
 
 var drawMessage = function() {
+    turnMessage.textContent = '';
     outcomeMessage.textContent =`Game ended in a draw!`;
+    setTimeout(resetGame, 3000);
     console.log('draw message works');
 }
-// var handleReset = function() {
-//     if (there is a winner || all 9 boxes are filled with textContent) {
-//         change textContent = "";
-//         currentPlayer = "";
-//     }
-// }
 
-// create if statements for winning conditions
+var resetGame = function() {
+    for (let i = 0; i < boxes.length; i++) {
+            boxes[i].textContent = '';
+            boxes[i].style.backgroundColor = 'pink';
+    }
+    currentPlayer = '';
+    winner = '';
+    turnMessage.textContent = '';
+    outcomeMessage.textContent = '';
+    console.log('reset works!');
+}
+
+resetBtn.addEventListener('click', resetGame);

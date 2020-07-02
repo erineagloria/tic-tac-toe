@@ -1,9 +1,8 @@
-
 body {
     background-color: black;
     color: white;
     margin: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Permanent Marker', sans-serif;
     text-size-adjust: 100%;
     box-sizing: inherit;
     cursor: pointer;
@@ -17,6 +16,7 @@ h1 {
 }
 #title-tac {
     color: white;
+    font-size: 2em;
 }
 #title-toe {
     color: #FF0099;
