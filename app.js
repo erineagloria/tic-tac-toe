@@ -3,25 +3,13 @@ console.log('tic-tac-toe');
 //store players
 var numOfPlayers = 2;
 var currentPlayer;
+var winner;
 
 // create a variable for max number of attempts
 var maxAttempts = 9;
 
 // create a variable to store game state
 var gamePlay = ["","","","","","","","",""];
-
-//create functions to display various messages (player turn, win, draw)
-
-var playerTurnMessage = function() {
-    `It's Player ${currentPlayer}'s turn`;
-}
-var winningMessage = function() {
-    `Player ${winner} has won!`;
-}
-
-var drawMessage = function() {
-    `Game ended in a draw!`;
-}
 
 // create functions for the game flow
 // -need to track gamePlay
@@ -38,15 +26,29 @@ var drawMessage = function() {
 
 var boxes = document.querySelectorAll('.box');
 var restartBtn = document.querySelector('.restart-btn');
+var turnMessage = document.querySelector('.player-turn-message');
+var outcomeMessage = document.querySelector('.win-draw-message');
+
+//create functions to display various messages (player turn, win, draw)
+
+var playerTurnMessage = function() {
+    if (currentPlayer === 'X') {
+        turnMessage.textContent =`It's Player O's turn`;
+    } else {
+        turnMessage.textContent =`It's Player X's turn`;
+    }
+    console.log('player turn message works');
+}
 
 // When you click on any square, the textContent will change to "X" and the background will change to 'red'
 var handleBoxClick = function(event) {
     var clickedBox = event.target;
-    var clickedBoxIndex = clickedBox.dataset.index;
+ //   var clickedBoxIndex = clickedBox.dataset.index;
     if (clickedBox.textContent === "") { // handleBoxCheck -check if move is legal // pull the data-index, then check if the textContent of the box is blank
-        event.target.textContent = handlePlayerChange(); // assign a variable that will contain either X or O, player change for next click
-        event.target.style.backgroundColor = 'red';
+        clickedBox.textContent = handlePlayerChange(); // assign a variable that will contain either X or O, player change for next click
+        clickedBox.style.backgroundColor = 'red';
         console.log('switching works');
+        determineWinner();
     }
 }
 
@@ -63,7 +65,6 @@ var handlePlayerChange = function() {
 }
 
 var determineWinner = function() {
-var winner;
     if (currentPlayer === 'X') {
         if (boxes[0].textContent === 'X' &&
             boxes[1].textContent === 'X' &&
@@ -138,7 +139,8 @@ var winner;
             boxes[6].classList.add('show-winner');
             winningMessage();
         } else {
-            drawMessage();
+            playerTurnMessage();
+            console.log('game continues for another turn')
         }
     } else {
         if (currentPlayer === 'O') {
@@ -214,13 +216,24 @@ var winner;
                 boxes[4].classList.add('show-winner') 
                 boxes[6].classList.add('show-winner');
                 winningMessage();
+                console.log('determine winner works')
             } else {
-                drawMessage();
+                playerTurnMessage();
+                console.log('game continues for another turn')
             }
         }
     }
 }
 
+var winningMessage = function() {
+    outcomeMessage.textContent =`Player ${winner} has won!`;
+    console.log('winning message works');
+}
+
+var drawMessage = function() {
+    outcomeMessage.textContent =`Game ended in a draw!`;
+    console.log('draw message works');
+}
 // var handleReset = function() {
 //     if (there is a winner || all 9 boxes are filled with textContent) {
 //         change textContent = "";
