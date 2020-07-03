@@ -19,16 +19,16 @@
             </div>
         </section>
         <div class="game">
-            <div class="grid">
-                <div data-index="0" class="box top-left"></div>
-                <div data-index="1" class="box top-mid"></div>
-                <div data-index="2" class="box top-right"></div>
-                <div data-index="3" class="box mid-left"></div>
-                <div data-index="4" class="box mid-mid"></div>
-                <div data-index="5" class="box mid-right"></div>
-                <div data-index="6" class="box bottom-left"></div>
-                <div data-index="7" class="box bottom-mid"></div>
-                <div data-index="8" class="box bottom-right"></div>
+            <div class="grid scale-in-center">
+                <div data-index="0" class="box top left"></div>
+                <div data-index="1" class="box top center"></div>
+                <div data-index="2" class="box top right"></div>
+                <div data-index="3" class="box mid left"></div>
+                <div data-index="4" class="box mid center"></div>
+                <div data-index="5" class="box mid right"></div>
+                <div data-index="6" class="box bottom left"></div>
+                <div data-index="7" class="box bottom center"></div>
+                <div data-index="8" class="box bottom right"></div>
             </div>
         </div>
     </main>
@@ -41,8 +41,12 @@
         </div>
     </aside> -->
     <footer>
-        <button class="reset-btn">Play Again</button>
-        <p>&copy; 2020, Erinea Gloria. All rights reserved.</p>
+        <div class="left-side-bar">
+            <button class="how-to-play-btn">How To Play</button><button class="reset-btn">Reset</button>
+            <!-- <p class="rules" style="display: none;">Player 1 is 'X' and Player 2 is 'O'. Players take turns putting their marks in empty squares.The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a draw.</p> -->
+            <p class="rules" style="visibility: hidden;">Player 1 is 'X' and Player 2 is 'O'. Players take turns putting their marks in empty squares.The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner. <br>When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a draw.</p>
+        </div>
+       <p>&copy; 2020, Erinea Gloria. All rights reserved.</p>
     </footer>
     <script src="app.js"></script>
 </body>

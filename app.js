@@ -28,6 +28,8 @@ var boxes = document.querySelectorAll('.box');
 var resetBtn = document.querySelector('.reset-btn');
 var turnMessage = document.querySelector('.player-turn-message');
 var outcomeMessage = document.querySelector('.win-draw-message');
+var howToPlayBtn = document.querySelector('.how-to-play-btn');
+var rules = document.querySelector('.rules');
 
 //create functions to display various messages (player turn, win, draw)
 
@@ -42,11 +44,8 @@ var playerTurnMessage = function() {
 
 // When you click on any square, the textContent will change to "X" and the background will change to 'red'
 var handleBoxClick = function(event) {
-    var clickedBox = event.target;
- //   var clickedBoxIndex = clickedBox.dataset.index;
-    if (clickedBox.textContent === "") { // handleBoxCheck -check if move is legal // pull the data-index, then check if the textContent of the box is blank
-        clickedBox.textContent = handlePlayerChange(); // assign a variable that will contain either X or O, player change for next click
-        // clickedBox.style.backgroundColor = 'white';
+    if (event.target.textContent === "") { // handleBoxCheck -check if move is legal (check if the textContent of the box is blank)
+        event.target.textContent = handlePlayerChange(); // assign a variable that will contain either X or O, player change for next click
         console.log('switching works');
         determineWinner();
     }
@@ -246,16 +245,11 @@ var determineWinner = function() {
     }
 }
 
-// attempt below to shorten the draw code
-// for (let i = 0; i < boxes.length; i++) {
-//     boxes[i].textContent !== '';
-// }
-
 var winningMessage = function() {
     outcomeMessage.textContent =`Player ${winner} has won!`;
     turnMessage.textContent = '';
     console.log('winning message works');
-    setTimeout(resetGame, 3000);
+    setTimeout(resetGame, 4000);
 }
 
 var drawMessage = function() {
@@ -265,11 +259,32 @@ var drawMessage = function() {
     console.log('draw message works');
 }
 
+var showRules = function() {
+    if (rules.style.visibility === 'hidden') {
+        rules.style.visibility = 'visible';
+        console.log('rules are visible');
+    } else {
+        rules.style.visibility = 'hidden';
+        console.log('rules are hidden');
+    }
+}
+
+// var showRules = function() {
+//     if (rules.style.display === 'none') {
+//         rules.style.display = 'block';
+//         console.log('rules are visible');
+//     } else {
+//         rules.style.display = 'none';
+//         console.log('rules are hidden');
+//     }
+// }
+
+howToPlayBtn.addEventListener('click', showRules);
+
 var resetGame = function() {
     for (let i = 0; i < boxes.length; i++) {
             boxes[i].textContent = '';
             boxes[i].classList.remove('show-winner');
-            // boxes[i].style.backgroundColor = 'black';
     }
     currentPlayer = '';
     winner = '';
