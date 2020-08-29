@@ -1,6 +1,6 @@
 # SEI Project 1: Futuristic Tic-Tac-Toe 
 
-Demo my <a href="https://erineagloria.github.io/tic-tac-toe/">Tic Tac Toe</a>
+Demo my <a href="https://erineagloria.github.io/tic-tac-toe/" target="_blank">Tic Tac Toe</a>
 
 <img src="https://github.com/erineagloria/tic-tac-toe/blob/master/Tic-Tac-Toe.png" alt="final-project-design">
 
