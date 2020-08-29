@@ -1,6 +1,6 @@
-# SEI Project 1: Making a Tic-Tac-Toe Game 
+# SEI Project 1: Futuristic Tic-Tac-Toe 
 
-Demo my<a href="https://erineagloria.github.io/tic-tac-toe/">Tic Tac Toe</a>
+Demo my <a href="https://erineagloria.github.io/tic-tac-toe/">Tic Tac Toe</a>
 
 <img src="https://github.com/erineagloria/tic-tac-toe/blob/master/Tic-Tac-Toe.png" alt="final-project-design">
 
@@ -10,7 +10,7 @@ Initially I wanted to design a one player vs the computer game. However, given t
 
 The method to check for a winner was using the DOM. I created functions to check if the move was legal (if the text content of the class name is blank), then I added text content to mark that the box has been occupied. I performed tests using if..else if..else control flow to determine if there was a winning combination after each move.
 
-### Technologies Used
+## Technologies Used
 
 - JavaScript 
 - HTML
