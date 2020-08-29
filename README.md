@@ -1,6 +1,8 @@
-# Software Engineering Immersive Project 1: Making a Tic-Tac-Toe Game 
+# SEI Project 1: Making a Tic-Tac-Toe Game 
 
-Play my <a href="https://erineagloria.github.io/tic-tac-toe/">Tic Tac Toe</a>
+Demo my<a href="https://erineagloria.github.io/tic-tac-toe/">Tic Tac Toe</a>
+
+<img src="https://github.com/erineagloria/tic-tac-toe/blob/master/Tic-Tac-Toe.png" alt="final-project-design">
 
 The game's objective is to mark three boxes in a row (up, down, across, or diagonally). The first player to do so will win the game. If all nine boxes are full and neither player has marked three boxes in a row, the game will end in a draw. 
 
