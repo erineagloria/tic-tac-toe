@@ -1,6 +1,6 @@
 # SEI Project 1: Futuristic Tic-Tac-Toe 
 
-Demo my <a href="https://erineagloria.github.io/tic-tac-toe/" target="_blank">Tic Tac Toe</a>
+Demo my <a href="https://erineagloria.github.io/tic-tac-toe/" target="_blank">Tic-Tac-Toe</a>
 
 <img src="https://github.com/erineagloria/tic-tac-toe/blob/master/Tic-Tac-Toe.png" alt="final-project-design">
 
@@ -35,7 +35,7 @@ There are two buttons at the bottom left of the screen to show the game rules an
 - The grid needs to include 9 boxes, each box needs to have an id 
 - Each box needs to be responsive to a 'click'
 
-2. Create the page webpage layout
+2. Create the webpage layout
 - Create a section above the board to display messages (whose turn it is and if someone has won/draw)
 - Create a scoreboard underneath the grid
 - Scoreboard needs to keep track of each player's scores (incomplete)
